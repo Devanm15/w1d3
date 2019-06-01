@@ -31,7 +31,7 @@ var library = {
 // p01: Coding Music - 2 tracks
 // p02: Other Playlist - 1 tracks
 // access Library - playlist
-
+// for (var { t01: one } of tracks)
 var printPlaylists = function() {
   var finalResult = "";
   for (var i in library.playlists) {
@@ -115,7 +115,13 @@ printPlaylist();
 
 // adds an existing track to an existing playlist
 
-var addTrackToPlaylist = function(trackId, playlistId) {};
+var addTrackToPlaylist = function(trackId, playlistId) {
+  var trackId = library.tracks.t03.id;
+  var playlistId = library.playlists.p01.tracks;
+  var addTrack = playlistId + ", " + trackId;
+  console.log(addTrack);
+};
+addTrackToPlaylist();
 
 // generates a unique id
 // (use this for addTrack and addPlaylist)
@@ -128,8 +134,12 @@ var uid = function() {
 
 // adds a track to the library
 
-var addTrack = function(name, artist, album) {};
-
+var addTrack = function(name, artist, album) {
+  var id = uid();
+  library.tracks[id] = { id: id, name: name, artist: artist, album: album };
+  console.log(library.tracks);
+};
+addTrack();
 // adds a playlist to the library
 
 var addPlaylist = function(name) {};
