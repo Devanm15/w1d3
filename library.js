@@ -136,14 +136,23 @@ var uid = function() {
 
 var addTrack = function(name, artist, album) {
   var id = uid();
-  library.tracks[id] = { id: id, name: name, artist: artist, album: album };
+  library.tracks[id] = {
+    id: id,
+    name: "name",
+    artist: "artist",
+    album: "album"
+  };
   console.log(library.tracks);
 };
 addTrack();
 // adds a playlist to the library
 
-var addPlaylist = function(name) {};
-
+var addPlaylist = function(name) {
+  var id = uid();
+  library.playlists[id] = { id: id, name: "name", tracks: " " };
+  console.log(library.playlists);
+};
+addPlaylist();
 // STRETCH:
 // given a query string string, prints a list of tracks
 // where the name, artist or album contains the query string (case insensitive)
